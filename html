@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petites Pastries - Pâtisseries & Café</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Dégradé de fond */
+        body {
+            background: linear-gradient(to bottom, #fce3e3, #f8d8b2);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Animation fade-in pour les sections */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        /* Section Hero avec l'image du camion en fond */
+        .hero {
+            padding: 100px;
+            background: url('cami.jpeg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Logo sous l'image du camion */
+        .logo {
+            position: relative;
+            top: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .logo img {
+            width: 200px; /* Ajustez la taille du logo selon vos besoins */
+            margin-top: 20px;
+        }
+
+        /* Animation du bouton au clic */
+        button {
+            background-color: #d4a373;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            margin: 20px;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Section Formules */
+        .formules {
+            padding: 50px;
+            text-align: center;
+            background-color: #fdf3e7;
+        }
+
+        .formules img {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .formules .formule {
+            margin-bottom: 20px;
+        }
+
+        /* Ajout d'un bouton fixe de commande */
+        .order-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #d4a373;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .order-button:hover {
+            transform: scale(1.1);
+        }
+
+        .order-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Petites Pastries</h1>
+        <p>Food Truck de pâtisserie - Place Major, Marseille</p>
+    </header>
+
+    <!-- Logo sous l'image du camion -->
+    <section class="hero fade-in">
+        <h2>Délices sucrés et cafés raffinés</h2>
+        <p>Venez découvrir nos pâtisseries artisanales accompagnées d'un café de qualité.</p>
+        <div class="logo">
+            <img src="caflogo.jpeg" alt="Petites Pastries Logo">
+        </div>
+    </section>
+    
+    <!-- Formules -->
+    <section class="formules fade-in">
+        <h2>Nos Formules</h2>
+        <!-- Formule Petit Déjeuner -->
+        <div class="formule">
+            <img src="cartform.jpeg" alt="Formule Petit Déjeuner">
+            <p>Formule Petit Déjeuner : Une boisson, deux viennoiseries ou pâtisserie - 3,90€</p>
+        </div>
+        <!-- Assortiment de Mini-Pâtisseries -->
+        <div class="formule">
+            <img src="cartbois.jpeg" alt="Assortiment de Mini-Pâtisseries">
+            <p>Assortiment de 5 Mini-Pâtisseries - 6€</p>
+        </div>
+        <!-- Lot de Macarons -->
+        <div class="formule">
+            <img src="cartpat.jpeg" alt="Lot de Macarons">
+            <p>Lot de 8 Macarons (parfums variés) - 10€</p>
+        </div>
+    </section>
+
+    <!-- Order Button -->
+    <a href="commande.html" class="order-button">Commander</a>
+
+    <footer>
+        <p>&copy; 2025 Petites Pastries - Place Major, Marseille</p>
+        <div class="contact">
+            <p>Mobile : 07.61.23.84.10</p>
+            <p>Adresse : Av. Vaudoyer, 13002 Marseille</p>
+            <p>Email : PetitePastries@gmail.com</p>
+            <p>Site officiel : <a href="http://www.PETITESpastries.fr">www.PETITESpastries.fr</a></p>
+            <p>Instagram : @petitespastries.im</p>
+            <p>TikTok : @patitepastries</p>
+        </div>
+    </footer>
+
+    <script>
+        // Ajouter une animation de fade-in au scroll
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(function(element) {
+                const position = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (position < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
